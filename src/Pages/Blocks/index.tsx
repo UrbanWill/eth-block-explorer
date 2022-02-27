@@ -1,19 +1,15 @@
-import { FC, useContext, useEffect, useState } from 'react';
-import { EthersContext } from '../../hooks/Contexts/useEthers';
-import { EthersContextInterface } from '../../types';
+import { FC } from 'react';
+import useGetLatestBlocks from '../../hooks/queries/useGetLatestBlocks';
 
 const Blocks: FC = () => {
-  const { provider } = useContext(EthersContext) as EthersContextInterface;
-  const [latestBlock, setLatestBlock] = useState<number | null>(null);
+  const { data, isLoading } = useGetLatestBlocks();
 
-  useEffect(() => {
-    provider.getBlockNumber().then((res) => setLatestBlock(res));
-  }, []);
+  console.log(data);
 
   return (
     <div>
       <p>Blocks</p>
-      {latestBlock && <p>{`The latest block is: ${latestBlock}`}</p>}
+      {isLoading ? <p>Loading...</p> : <p>{`Got data for the latest N blocks: ${data?.length}`}</p>}
     </div>
   );
 };
