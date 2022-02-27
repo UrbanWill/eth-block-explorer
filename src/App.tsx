@@ -3,13 +3,16 @@ import './App.css';
 import { RouteRenderer } from './Routes';
 import { Navbar } from './Components/Common';
 import Layout from './Components/Common/Layout';
+import EthersProvider from './hooks/Contexts/useEthers';
 
 const App: FC = () => (
   <div className="App">
-    <Navbar />
-    <Layout>
-      <RouteRenderer />
-    </Layout>
+    <EthersProvider>
+      <Navbar />
+      <Layout>
+        <RouteRenderer />
+      </Layout>
+    </EthersProvider>
   </div>
 );
 
