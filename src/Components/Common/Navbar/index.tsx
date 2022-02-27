@@ -1,8 +1,9 @@
 import { FC } from 'react';
+import './navbar.css';
 
 const Navbar: FC = () => (
-  <div>
-    <span>Navbar</span>
+  <div className="navbar">
+    <h2>Blockscan</h2>
   </div>
 );
 
