@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useTable, usePagination, Column } from 'react-table';
+import Button from '../Button';
 
 import './table.css';
 
@@ -62,24 +63,11 @@ const Table: FC<Props> = ({ columns, data, showPagination }) => {
       </div>
       {showPagination && (
         <div className="pagination">
-          <button type="button" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-            {'<<'}
-          </button>{' '}
-          <button type="button" onClick={() => previousPage()} disabled={!canPreviousPage}>
-            {'<'}
-          </button>{' '}
-          <button type="button" onClick={() => nextPage()} disabled={!canNextPage}>
-            {'>'}
-          </button>{' '}
-          <button type="button" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-            {'>>'}
-          </button>{' '}
-          <span>
-            Page{' '}
-            <strong>
-              {pageIndex + 1} of {pageOptions.length}
-            </strong>{' '}
-          </span>
+          <Button label="<<" onHandleClick={() => gotoPage(0)} isDisabled={!canPreviousPage} />
+          <Button label="<" onHandleClick={() => previousPage()} isDisabled={!canPreviousPage} />
+          <span className="pagination-label">{`Page ${pageIndex + 1} of ${pageOptions.length}`}</span>
+          <Button label=">" onHandleClick={() => nextPage()} isDisabled={!canNextPage} />
+          <Button label=">>" onHandleClick={() => gotoPage(pageCount - 1)} isDisabled={!canNextPage} />
         </div>
       )}
     </>

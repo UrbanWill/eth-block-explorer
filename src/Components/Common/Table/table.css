@@ -27,3 +27,15 @@
   padding: 16px;
   border-bottom: 1px solid rgb(229, 231, 235);
 }
+
+.pagination {
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.pagination-label {
+  background-color: rgba(52, 152, 219, 0.1);
+  padding: 6px 8px;
+  border-radius: 6px;
+}
