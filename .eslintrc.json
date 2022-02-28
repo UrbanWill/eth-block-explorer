@@ -28,10 +28,8 @@
   "plugins": ["import", "react", "@typescript-eslint"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [
-      1,
-      { "extensions": [".js", ".jsx", ".tsx"] }
-    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
     "no-console": 1,
     "object-curly-newline": "off",
     "camelcase": "off",

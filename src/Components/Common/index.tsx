@@ -1,5 +1,4 @@
-/* disabled import rule in case common components are added */
-/* eslint-disable import/prefer-default-export */
 import Navbar from './Navbar';
+import Table from './Table';
 
-export { Navbar };
+export { Navbar, Table };

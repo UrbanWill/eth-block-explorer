@@ -6,7 +6,7 @@ const BLOCKS_TO_GET = 10;
 
 /** useGetLatestBlocks is a hook to get the data of the latest N blocks */
 const useGetLatestBlocks = () => {
-  const [latestBlocksData, setLatestBlocksData] = useState<BlockInterface[] | null>(null);
+  const [latestBlocksData, setLatestBlocksData] = useState<BlockInterface[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { provider } = useContext(EthersContext) as EthersContextInterface;
 
