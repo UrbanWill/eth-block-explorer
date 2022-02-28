@@ -1,6 +1,7 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { FC } from 'react';
 import { useTable, usePagination, Column } from 'react-table';
+
+import './table.css';
 
 interface Props {
   columns: Array<Column<object>>;
@@ -34,29 +35,31 @@ const Table: FC<Props> = ({ columns, data, showPagination }) => {
 
   return (
     <>
-      <table {...getTableProps()}>
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {page.map((row) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+      <div className="table-container">
+        <table {...getTableProps()} className="table">
+          <thead>
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <th {...column.getHeaderProps()}>{column.render('Header')}</th>
                 ))}
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {page.map((row) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
       {showPagination && (
         <div className="pagination">
           <button type="button" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
