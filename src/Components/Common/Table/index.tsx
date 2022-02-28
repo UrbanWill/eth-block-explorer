@@ -42,7 +42,7 @@ const Table: FC<Props> = ({ columns, data, showPagination }) => {
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                  <th {...column.getHeaderProps([{ className: column.className }])}>{column.render('Header')}</th>
                 ))}
               </tr>
             ))}

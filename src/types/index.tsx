@@ -17,3 +17,15 @@ export interface BlockInterface {
   timestamp: number;
   transactions: string[] | Transaction[];
 }
+
+export interface blockHeader {
+  value: number;
+}
+
+export interface timestampHeader {
+  value: number;
+}
+
+export interface transactionsHeader {
+  value: [];
+}
