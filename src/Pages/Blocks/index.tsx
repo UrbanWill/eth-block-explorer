@@ -44,13 +44,13 @@ const Blocks: FC = () => {
   );
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <p>Loading...</p>;
   }
 
   return (
     <div>
       <h2>Blocks</h2>
-      <Table columns={columns} data={data} showPagination />
+      <Table columns={columns} data={data} showPagination={false} />
     </div>
   );
 };
