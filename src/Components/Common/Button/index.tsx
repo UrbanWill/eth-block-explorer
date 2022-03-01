@@ -5,7 +5,7 @@ import './button.css';
 interface Props {
   label: string;
   onHandleClick: () => void;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 }
 
 const Button: FC<Props> = ({ label, onHandleClick, isDisabled }) => (
@@ -19,4 +19,7 @@ const Button: FC<Props> = ({ label, onHandleClick, isDisabled }) => (
   </button>
 );
 
+Button.defaultProps = {
+  isDisabled: false
+};
 export default Button;

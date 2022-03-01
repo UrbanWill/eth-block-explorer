@@ -1,6 +1,17 @@
+.txn-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .txs-header-md {
   max-width: 20vw;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.txn-no-txn-message {
+  display: flex;
+  justify-content: center;
 }
