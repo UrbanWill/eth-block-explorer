@@ -4,7 +4,7 @@ import { CellProps } from 'react-table';
 import useGetLatestBlocks from '../../hooks/queries/useGetLatestBlocks';
 import { Table } from '../../Components/Common';
 import { getTimestamp } from '../../utils';
-import { blockHeader, timestampHeader, transactionsHeader } from '../../types';
+import { BlockHeader, TimestampHeader, TransactionsHeader } from '../../types';
 
 import './blocks.css';
 
@@ -16,7 +16,7 @@ const Blocks: FC = () => {
       {
         Header: 'Block',
         accessor: 'number',
-        Cell: ({ cell: { value } }: CellProps<blockHeader>) => (
+        Cell: ({ cell: { value } }: CellProps<BlockHeader>) => (
           <Link to={`/txs/${value}`} className="block-header-link">
             {value}
           </Link>
@@ -26,13 +26,13 @@ const Blocks: FC = () => {
       {
         Header: 'Timestamp',
         accessor: 'timestamp',
-        Cell: ({ cell: { value } }: CellProps<timestampHeader>) => getTimestamp(value),
+        Cell: ({ cell: { value } }: CellProps<TimestampHeader>) => getTimestamp(value),
         className: 'block-header-md'
       },
       {
         Header: 'Transactions',
         accessor: 'transactions',
-        Cell: ({ cell: { value } }: CellProps<transactionsHeader>) => value.length,
+        Cell: ({ cell: { value } }: CellProps<TransactionsHeader>) => value.length,
         className: 'block-header-md'
       },
       {
