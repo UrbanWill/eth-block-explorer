@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
+import { ethers } from 'ethers';
 import { EthersContext } from '../Contexts/useEthers';
-import { EthersContextInterface, BlockInterface } from '../../types';
+import { EthersContextInterface } from '../../types';
 
 const BLOCKS_TO_GET = 10;
 
 /** useGetLatestBlocks is a hook to get the data of the latest N blocks */
 const useGetLatestBlocks = () => {
-  const [latestBlocksData, setLatestBlocksData] = useState<BlockInterface[]>([]);
+  const [latestBlocksData, setLatestBlocksData] = useState<ethers.providers.Block[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { provider } = useContext(EthersContext) as EthersContextInterface;
 
