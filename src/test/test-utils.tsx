@@ -1,12 +1,16 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-
 import { render } from '@testing-library/react';
+import EthersProvider from '../hooks/Contexts/useEthers';
 
 const customRender = (ui: React.ReactElement, options = {}) =>
   render(ui, {
     // wrap provider(s) here if needed
-    wrapper: ({ children }) => <BrowserRouter>{children}</BrowserRouter>,
+    wrapper: ({ children }) => (
+      <BrowserRouter>
+        <EthersProvider>{children}</EthersProvider>
+      </BrowserRouter>
+    ),
     ...options
   });
 
