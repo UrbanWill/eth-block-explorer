@@ -27,6 +27,7 @@
   },
   "plugins": ["import", "react", "@typescript-eslint"],
   "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
