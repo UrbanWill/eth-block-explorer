@@ -19,4 +19,5 @@
 
 ## How to run locally:
 - Clone the repo and install dependencies: `npm install`
+- Start the app: `npm run dev`
 - Some basic tests are written, to run those: `npm test`
