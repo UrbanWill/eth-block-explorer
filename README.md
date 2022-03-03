@@ -1,5 +1,5 @@
 # Project description
-- A responsive ethereum block exporer
+- A responsive ethereum block explorer
 - Deployed: https://chourico-block-explorer.netlify.app
 
 ## Features
